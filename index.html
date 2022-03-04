@@ -7,48 +7,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO's</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./javascript/datos.js"></script>
 
 </head>
 
 <body>
     <div class="corse">
-        <div class="container">
+        <div class="container ">
             <header>
                 <h1>CONTROL DE TAREAS</h1>
-            </header>
-            <main>
-                <div class="container">
-                    <div class="editor">
-                        <h2>Editor de Tareas</h2>
-                        <div>
-                            <label for="">tarea</label>
-                            <input type="text">
-                        </div>
-                        <div>
-                            <label for="">Prioridad</label>
-                            <input type="text">
-                        </div>
-                        <button>Guardar</button>
-                    </div>
-                    <div class="Lista">
-                        <select name="Prioridad" id="">
-                            <option value="urgente">Urgente</option>
-                            <option value="mensual">Mensual</option>
-                            <option value="Diaria">Diaria</option>
-                        </select>
-
-                    </div>
-
-
+                <div>
+                    <img src="./images/avatar.jpg" alt="">
                 </div>
-
-            </main>
+                <div>
+                    <h4>Bienvenido: Nombre Usuario</h4>
+                    <p></p>
+                </div>
+            </header>
         </div>
+        <main>
+            <div class="container">
+                <section class="editor">
+                    <form action="">
+                        <h2>Editor de Tareas</h2>
+                        <div class="usuario">
+                            <label for=""> Nueva Tarea</label>
+                            <input type="text" id="inputNombreTarea">
+                        </div>
+                        <div>
+                            <label for="">Nueva Prioridad</label>
+                            <select id="">
+                                <option value="urgente">Urgente</option>
+                                <option value="mensual">Mensual</option>
+                                <option value="Diaria">Diaria</option>
+                            </select>
+                            <input type="text" id="inputPrioridad">
+                        </div>
+                        <input type="submit" value="Guardar" id="btnSubmit"></input>
+                    </form>
+                </section>
+                <section class="lista">
+                    <h2>Lista de Tareas</h2>
+                    <div>
+                        <h4>Filtrar por Prioridad</h4>
+                        <h4>Filtrar por Nombre</h4>
+                    </div>
+                    <select name="prioridad" id="">
+                        <option value="urgente">Urgente</option>
+                        <option value="mensual">Mensual</option>
+                        <option value="Diaria">Diaria</option>
+                    </select>
+                    <input type="text">
+                    <div class="nombres">
+                        <div>
+                            <p>Tarea</p>
+                        </div>
+                        <p>Prioridad</p>
+                    </div>
+                    <section class="contenedortarea">
+
+                    </section>
+                </section>
+            </div>
+        </main>
     </div>
-
-
-
-
+    <div class="container">
+        <footer>
+            <h4>copyright</h4>
+        </footer>
+    </div>
+    </div>
 
     <script src="./javascript/funciones.js"></script>
 </body>

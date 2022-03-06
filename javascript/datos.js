@@ -1,16 +1,16 @@
 let tareas = new Array(
     {
-        idTarea: '1',
+        idTarea: 1,
         nombreTarea: 'Dormir',
         Prioridad: 'Diaria',
     },
     {
-        idTarea: '2',
+        idTarea: 2,
         nombreTarea: 'Comer',
         Prioridad: 'Diaria',
     },
     {
-        idTarea: '3',
+        idTarea: 3,
         nombreTarea: 'Nomina',
         Prioridad: 'Mensual',
     }

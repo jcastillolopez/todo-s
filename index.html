@@ -11,73 +11,80 @@
 
 </head>
 
-<body>
+<body id="top">
     <div class="corse">
-        <div class="container ">
-            <header>
+        <header>
+            <div class="container">
                 <h1>CONTROL DE TAREAS</h1>
                 <div>
                     <img src="./images/avatar.jpg" alt="">
                 </div>
                 <div>
                     <h4>Bienvenido: Nombre Usuario</h4>
-                    <p></p>
                 </div>
-            </header>
-        </div>
+            </div>
+        </header>
         <main>
             <div class="container">
                 <section class="editor">
-                    <form action="">
-                        <h2>Editor de Tareas</h2>
-                        <div class="usuario">
+                    <h2>Editor de Tareas</h2>
+                    <div class="usuario">
+                        <div class="nuevatarea">
                             <label for=""> Nueva Tarea</label>
                             <input type="text" id="inputNombreTarea">
                         </div>
-                        <div>
-                            <label for="">Nueva Prioridad</label>
-                            <select id="">
-                                <option value="urgente">Urgente</option>
-                                <option value="mensual">Mensual</option>
+                        <div class="nuevaprioridad">
+                            <label for="">
+                                Prioridad</label>
+                            <select id="selectPrioridad">
+                                <option value="Urgente">Urgente</option>
+                                <option value="Mensual">Mensual</option>
                                 <option value="Diaria">Diaria</option>
                             </select>
-                            <input type="text" id="inputPrioridad">
                         </div>
-                        <input type="submit" value="Guardar" id="btnSubmit"></input>
-                    </form>
+                    </div>
+                    <button class="btnguardar" value="Guardar" id="btnSubmit"></button>
+
                 </section>
                 <section class="lista">
                     <h2>Lista de Tareas</h2>
-                    <div>
-                        <h4>Filtrar por Prioridad</h4>
+                    <div class="filtrarnombre">
                         <h4>Filtrar por Nombre</h4>
+                        <input type="text" id="filtroPorNombre">
                     </div>
-                    <select name="prioridad" id="">
-                        <option value="urgente">Urgente</option>
-                        <option value="mensual">Mensual</option>
-                        <option value="Diaria">Diaria</option>
-                    </select>
-                    <input type="text">
+                    <div class="filtrarprioridad">
+                        <h4>Filtrar por Prioridad</h4>
+                        <select name="prioridad" id="filtroPrioridad">
+                            <option value="todas" selected>Todas las Tareas</option>
+                            <option value="Urgente">Urgente</option>s
+                            <option value="Mensual">Mensual</option>
+                            <option value="Diaria">Diaria</option>
+                        </select>
+                    </div>
                     <div class="nombres">
-                        <div>
+                        <div class="p">
                             <p>Tarea</p>
                         </div>
-                        <p>Prioridad</p>
+                        <div class="p">
+                            <p>Prioridad</p>
+                        </div>
                     </div>
                     <section class="contenedortarea">
-
                     </section>
                 </section>
             </div>
         </main>
-    </div>
-    <div class="container">
         <footer>
-            <h4>copyright</h4>
+            <div class="container">
+                <p>Copyright &copy; 2022 - <a href="">Aviso Legal</a> - <a href="">Cookies</a></p>
+            </div>
         </footer>
+        <div class="arriba">
+            <a href="#top">
+                <i class="fas fa-caret-square-up"></i>
+            </a>
+        </div>
     </div>
-    </div>
-
     <script src="./javascript/funciones.js"></script>
 </body>
 

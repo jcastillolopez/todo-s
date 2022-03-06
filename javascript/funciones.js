@@ -1,78 +1,120 @@
+let localTareas = (localStorage.getItem('tareas') === null) ? localStorage.setItem('tareas', JSON.stringify(tareas)) : JSON.parse(localStorage.getItem('tareas'))
 
 const contenedorTarea = document.querySelector('.contenedortarea');
-const inputNombreTarea = document.getElementById('inputNombreTarea');
-const inputPrioridad = document.getElementById('inputPrioridad');
-const btnsubmit = document.getElementById('btnSubmit');
+const inputNombreTarea = document.querySelector('#inputNombreTarea');
+const btnsubmit = document.querySelector('#btnSubmit');
 
+/******************* PINTAR ------- TAREAS ----INICIO*************** */
 
-printTareas(tareas, contenedorTarea);
+printTareas(localTareas, contenedorTarea);
 
-
-function printTareas(pTareas, pdiv) {
-
+function printTareas(pTareas, pDiv) {
+    pDiv.innerHTML = ""
     for (const tarea of pTareas) {
-
         const div = printTarea(tarea);
-        console.log(div);
-
-        pdiv.appendChild(div);
-
+        pDiv.appendChild(div);
     }
 }
 
 function printTarea(pTarea) {
-    const pTareaNombre = document.createElement('p');
+    const pTareaNombre = document.createElement('span');
     pTareaNombre.innerText = pTarea.nombreTarea;
 
-    const pPrioridad = document.createElement('p');
+    const pPrioridad = document.createElement('span');
     pPrioridad.innerText = pTarea.Prioridad;
-
 
     const btnBorrar = document.createElement('button');
     btnBorrar.innerText = 'Borrar';
-
     btnBorrar.dataset.idTarea = pTarea.idTarea;
     btnBorrar.addEventListener('click', (event) => {
-        tareas = borrarTarea(event.target.dataset.idTarea, tareas);
+        let listadoLocalTareas = JSON.parse(localStorage.getItem('tareas'))
+        let listadoActualiazado = borrarTarea(event.target.dataset.idTarea, listadoLocalTareas);
+        localStorage.setItem('tareas', JSON.stringify(listadoActualiazado))
         event.target.parentNode.remove();
     });
 
-    const div = document.createElement('div')
+    const div = document.createElement('div');
+    let color
+    switch (pTarea.Prioridad) {
+        case 'Urgente':
+            color = 'red';
+            break;
+        case 'Mensual':
+            color = 'yellow';
+            break;
+        case 'Diaria':
+            color = 'green';
+            break;
+        default:
+            break;
+    }
+    div.style.boxShadow = `4px 4px 4px ${color}`
+
     div.classList.add('tareas')
-    console.log(pTarea);
     div.appendChild(pTareaNombre);
     div.appendChild(pPrioridad);
     div.appendChild(btnBorrar);
-
     return div
 }
 
 function borrarTarea(pIdbtn, pTareas) {
-    const nuevaListaTareas = [];
-
-    for (const tarea of pTareas) {
+    let nuevaListaTareas = [];
+    for (let tarea of pTareas) {
         if (tarea.idTarea !== parseInt(pIdbtn)) {
             nuevaListaTareas.push(tarea);
         }
     }
     return nuevaListaTareas
-
 }
-btnsubmit.addEventListener('click', nuevaTarea);
-function nuevaTarea(event) {
 
-    event.preventDefault();
+/******************* PINTAR ------- TAREAS ----FIN*************** */
+/**************** CREAR         NUEVA       TAREA       ******** */
+btnsubmit.addEventListener('click', crearTarea);
 
-    const nuevatarea = {
+function crearTarea() {
+    listadoLocalTareas = JSON.parse(localStorage.getItem('tareas'));
 
-        idTarea: tareas.length + 1,
+    let nuevaTarea = {
+        idTarea: listadoLocalTareas.length + 1,
         nombreTarea: inputNombreTarea.value,
-        Prioridad: inputPrioridad.value
+        Prioridad: selectPrioridad.value
     }
-    console.log(nuevatarea);
-    tareas.push(nuevatarea);
 
-
-    const divNuevaTarea = printTarea(nuevatarea);
-    contenedorTarea.appendChild(divNuevaTarea);
+    listadoLocalTareas.push(nuevaTarea);
+    localStorage.setItem('tareas', JSON.stringify(listadoLocalTareas))
+    printTareas(listadoLocalTareas, contenedorTarea);
 }
+
+/**************** CREAR         NUEVA       TAREA    FIN   ******** */
+/*******************CREAR      FILTROS     INICIO ******************/
+
+filtroPrioridad.addEventListener('change', (event) => {
+    let listadoTareas = JSON.parse(localStorage.getItem('tareas'));
+    if (event.target.value !== 'todas') {
+        const listadoFiltrado = listadoTareas.filter(tarea => tarea.Prioridad === event.target.value);
+        printTareas(listadoFiltrado, contenedorTarea)
+    } else {
+        printTareas(listadoTareas, contenedorTarea);
+    }
+});
+
+filtroPorNombre.addEventListener('input', tareasFiltradasNombre);
+
+function tareasFiltradasNombre(event) {
+    let filtroNombre = event.target.value.toLowerCase();
+    const FiltradasNombreTareas = new Array();
+    for (let tarea of tareas) {
+        if (tarea.nombreTarea.toLowerCase().includes(filtroNombre) && (!filtroNombre.includes(tarea))) {
+            FiltradasNombreTareas.push(tarea);
+        }
+    }
+    printTareas(FiltradasNombreTareas, contenedorTarea);
+}
+/*******************CREAR      FILTROS     FIN ******************/
+
+
+
+
+
+
+

@@ -103,7 +103,8 @@ filtroPorNombre.addEventListener('input', tareasFiltradasNombre);
 function tareasFiltradasNombre(event) {
     let filtroNombre = event.target.value.toLowerCase();
     const FiltradasNombreTareas = new Array();
-    for (let tarea of tareas) {
+    let listadoLocal = JSON.parse(localStorage.getItem('tareas'))
+    for (let tarea of listadoLocal) {
         if (tarea.nombreTarea.toLowerCase().includes(filtroNombre) && (!filtroNombre.includes(tarea))) {
             FiltradasNombreTareas.push(tarea);
         }

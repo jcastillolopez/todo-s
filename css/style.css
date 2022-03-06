@@ -6,246 +6,305 @@
     margin: 0;
     padding: 0;
 }
-body{
-    background-color:rgb(219, 216, 216);
-}
-img{
+img{   
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: cover;  
 }
-.corse{
-    max-width: 1400px; 
-}
-.container{
-   max-width: 576px;
+body{
+    background-color:rgb(219, 216, 216);
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;  
-    width: 90%; 
+   justify-content: center;
+}  
+.corse{
+    max-width: 1200px; 
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
 }
 
 header{
     width: 100%;     
     background-color:rgb(88, 85, 85);
     color: white;
-    text-align: center;   
-    font-size: 200%;    
-    align-items: center;
-    box-shadow: 2px 3px 4px grey;
+    text-align: center;  
+    font-size: 150%;       
+    box-shadow: 3px 3px 4px rgb(10, 10, 10);
     border-radius: 15px;  
     text-decoration: none;
-    margin: 10px auto;
+    margin: 5px auto;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: center;
 }
-  h1{   
-    width: 90%;
-    margin: 10px auto; 
-    border-radius: 10px;   
-    box-shadow: 2px 3px 6px rgb(8, 8, 8); 
-    
-   }
-   header div:last-child{      
-       display: flex;
-        align-content: flex-start;
-       font-size: 25px;
-       justify-content: center;   
-   }
+.container{
+     width: 100%; 
+     min-width: 400px;    
+     display: flex;
+     flex-wrap: wrap;
+     align-items:center;
+     justify-content: center;
+     width: 90%; 
+     margin: 0 auto;
    
-.editor{
-   min-width:100%;      
-    background-color: rgb(172, 168, 168);
-    border-radius: 10px;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 25px;
-    box-shadow: 2px 2px 3px grey; 
+ }
+.imagen{
+    width: 20%;   
+}
+.titulos{
+    width: 80%;
+    justify-content: center;
+    margin: 10px auto; 
+} 
+  h1{ 
+    border-radius: 10px;   
+    box-shadow: 2px 3px 6px rgb(8, 8, 8);
+    margin-bottom: 10px; 
+   } 
+   main{
+       min-height: 80vh;
+       flex-wrap: wrap;
+       flex-wrap:wrap ;
+       align-items:center;
+       justify-content: center;
+       width: 90%;
+       font-size: 125%;
+   }  
+  .usuario{
+    width: 100%; 
+    min-width: 400px;    
     display: flex;
     flex-wrap: wrap;
+    align-items:center;
     justify-content: center;
-     
+    width: 90%; 
+    margin: 0 auto;
+  }
+   .editor{        
+       width: 100%;       
+       text-align: center;       
+       background-color: rgb(172, 168, 168);      
+       box-shadow: 3px 3px 4px rgb(10, 10, 10);
+       border-radius: 15px;     
+       margin: 10px auto; 
    }
-   .nuevatarea{
-       display: flex;
-       flex-wrap: wrap;
-       width: 100%;
+   h2{
+    font-size:125% ;
+    border-radius: 10px;   
+    box-shadow: 2px 3px 6px rgb(8, 8, 8);
+    margin: 10px 20px; 
+    background-color: rgb(196, 190, 190);
+ }    
+   input{
+       width: 80%;
+       border-radius: 10px; 
+       margin: 0 10%;
+       height: 30px;  
+       margin-top: 10px; 
+       margin-bottom: 10px;   
        
    }
-
-input{
-    width: 100%;
-    height: 40px;
-    border-radius: 10px;    
-    margin-top: 10px;  
-    
-   
-}
-label{
-    text-align: right;
-    width: 100%;
-    margin: 10px 00px;
-    text-align: center;
-    margin-top: 10px;
-    }
-.nuevaprioridad{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
- .btnguardar{
-       width: 60%; 
-       margin-bottom: 40px;
-       background-color: gray;
-       font-weight:400;
-       font-size: 20px;
-    }  
-   
-
-.lista{
-    min-width:100%;      
-    background-color: rgb(172, 168, 168);
-    border-radius: 10px;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 25px;
-    box-shadow: 2px 2px 3px grey; 
-       display: flex;
-    flex-wrap: wrap;
-    justify-content: center;  
-}
-.filtrarprioridad{
-    width:100% ;    
-    background-color:lightgray;
-    margin: 10px;
-    box-shadow: 2px 2px 3px grey;
-    border-radius: 10px;  
-}
-.filtrarprioridad select{
-    width: 60%;
-    height: 40px;
-    margin: 10px;
-    font-size: 20px;
-    border-radius: 10px; 
-    background-color: rgb(184, 179, 179);
-}
-.nuevaprioridad select{
-    width: 100%;
-    height: 40px;
-    margin: 10px;
-    font-size: 20px;
-    border-radius: 10px; 
-    background-color: rgb(184, 179, 179);
-}
-.filtrarnombre{
-    width:100% ;    
-    background-color:lightgray;
-    margin: 10px;
-    box-shadow: 2px 2px 3px grey;
-    border-radius: 10px;  
-}
-.nombres{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:flex-start;
-    width: 100%;
-}
-.p{
-   
-    font-weight:550;    
-}
-.lista input{
-width: 60%;
-height: 40px;
-border-radius: 10px;
-margin-bottom: 10px;
-}
-h2{
+   select{
+       width: 80%;
+       border-radius: 10px;
+       margin: 0 10%;
+       height: 30px; 
+       background-color: rgb(192, 188, 188);
+       margin-top: 10px;
+       margin-bottom: 10px;
+   }
+   button{
     width: 80%;
-    font-size: 150%; 
-    box-shadow: 2px 2px 3px grey; 
-    margin-top: 10px;
-    background-color: gray;
     border-radius: 10px;
-    box-shadow: 2px 2px 3px rgb(7, 7, 7);      
-}
-.lista h4{
+    margin: 0 10%; 
+    height: 30px;
+    margin: 20px 0;
+    background-color: rgb(145, 142, 142);
+   }
+   .filtros{
+       width: 100%;       
+       text-align: center;       
+       background-color: rgb(204, 198, 198);      
+       box-shadow: 3px 3px 4px rgb(10, 10, 10);
+       border-radius: 15px;     
+       margin: 10px auto;
+   }    
+   .listado{
     width: 100%;
-    font-size: 100%;     
-    margin-top: 10px; 
-    text-align: center    ; 
-    
-}
-.p {
-    width: 35%;
-}
-.contenedortarea{
-    width: 90%;
-}
-.tareas{
-    width: 100%;   
-    box-shadow: 2px 3px 4px grey;
-    border-radius: 15px;  
-    text-decoration: none;
-    margin: 10px auto; 
-    background-color: rgb(119, 115, 115);
+    text-align: center;
+    background-color: rgb(204, 198, 198);      
+    box-shadow: 3px 3px 4px rgb(10, 10, 10);
+    border-radius: 15px;     
+    margin: 10px auto;
+} 
+.titulosLista{
+    width: 70%;
+    height: 30px;
     display: flex;
-    flex-wrap: wrap; 
-    align-items: center
-    ;      
+    justify-content:space-evenly;
 }
 span{
-    width: 35%;
+ 
 }
-.tareas button{
-   width: 15%;
-   margin: 10px;
-   text-align:center;
-  background-color: rgb(15, 13, 13);
-  border-radius: 5px;
-  margin-left: 30px;
-  color: red;
-  }
-  footer {
-    width: 100%;
-    background-color:rgb(88, 85, 85);
-    bottom: 0;
-    color: white;
-    padding: 1em 0.625em;
-    text-align: center;
-    font-size: 30px;  
-    box-shadow: 2px 3px 4px grey;
+.tareas{
+    width: 80%;
+    background-color: rgb(37, 37, 37);
+    box-shadow: 3px 3px 4px rgb(10, 10, 10);
     border-radius: 15px; 
-}
-footer a {
     color: white;
-    text-decoration: none;
-}
-footer a:hover {
-    color: rgb(146, 148, 37);
-}
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   
 
+} 
+.tareas button{
+    background-color: black;
+    color: red;
+    width: 20%;
+}  
+
+footer{
+    width: 100%;     
+    background-color:rgb(88, 85, 85);
+    color: white;
+    text-align: center;  
+    font-size: 150%;       
+    box-shadow: 3px 3px 4px rgb(10, 10, 10);
+    border-radius: 15px;  
+    text-decoration: none;
+    margin: 5px auto;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: center;
+}
 .arriba {
     position: fixed;
-    bottom: 50px;
+    bottom: 20px;
     right: 5px;
-    font-size: 1.5em;
-    
+    font-size: 1.5em;  
+    width: 40px;
+    height: 40px;
+  
+   
+}
+.arriba a {
+    color: rgba(5, 0, 0, 0.925);
+   
+   
 }
 
-.arriba a {
-    color: rgb(179, 144, 49);
-    width: 50px;
-    height: 50px;
-}
 @media(min-width: 768px) {
     .container{
-        max-width: 768x;
+        min-width: 768x;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 125%;       
      }
+     .editor{        
+        margin: 10px auto; 
+        display: flex;  
+        flex-wrap: wrap;
+       justify-content: center; 
+       align-items: center;
+    }
+    h2{
+        width: 90%;
+        margin-top: 10px;
+    }     
+    p{
+         width: 30%;
+     }
+    input{
+        width: 50%;        
+    }
+    select{
+        width: 50%; 
+        margin-bottom: 10px;
+    }
+    button{
+     width: 50%;
+     
+    }  
+    .filtros{        
+        margin: 10px auto; 
+        display: flex;  
+        flex-wrap: wrap;
+       justify-content: center; 
+       align-items: center;
+    }
+    
 }
 @media(min-width: 1200px) {
     .container{
         max-width: 1200x;
+        font-size: 150%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items:center;
+        justify-content: center;
+         }     
+     .listado{
+        width: 55%; 
+        min-height: 80vh; 
+        }    
+     .usuario{
+         min-height: 80vh;
+     width: 35%;
+     margin: 0px auto;
+     background-color: brown;
+     display: flex;
+     flex-wrap: wrap;      
+     text-align: center;       
+       background-color: rgb(126, 124, 124);      
+       box-shadow: 3px 3px 4px rgb(10, 10, 10);
+       border-radius: 15px;     
+      
+        } 
+    .filtros{
+        width: 80%; 
+           
+    } 
+    .editor{        
+        width: 80%;        
+    } 
+    h2{
+        font-size:125% ;
+        border-radius: 10px;   
+        box-shadow: 2px 3px 6px rgb(8, 8, 8);
+        margin: 10px 20px; 
+        background-color: rgb(196, 190, 190);
      }
-
+     p{
+         width: 80%;
+     }    
+       input{
+           width: 80%;
+           border-radius: 10px; 
+           margin: 0 10%;
+           height: 30px;  
+           margin-top: 10px; 
+           margin-bottom: 10px;   
+           
+       }
+       select{
+           width: 80%;
+           border-radius: 10px;
+           margin: 0 10%;
+           height: 30px; 
+           background-color: rgb(192, 188, 188);
+           margin-top: 10px;
+           margin-bottom: 10px;
+       }
+       button{
+        width: 80%;
+        border-radius: 10px;
+        margin: 0 10%; 
+        height: 30px;
+        margin: 20px 0;
+        background-color: rgb(145, 142, 142);
+       }
 }
